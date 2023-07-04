@@ -3,10 +3,24 @@ from sqlalchemy.orm import Session
 from .schemas import CreateProductRequest
 from .database import get_db
 from .models import Product
+from .seed import seed
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+import os
 
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI, db: Session = get_db()):
+    # startup
+    if os.getenv("MODE", "develop") == "develop":
+        seed(db)
+
+    yield
+    # shutdown
+    pass
+
+
+app = FastAPI(lifespan=lifespan)
 
 origins = [
     "http://localhost:5173",

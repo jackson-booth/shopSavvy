@@ -2,7 +2,7 @@
 node_modules
 /build
 frontend/.svelte-kit
-backend/db_data
+db_data/*
 /package
 .env
 .env.*

@@ -15,7 +15,6 @@ export const addToCart = (productId) => {
 export const removeFromCart = (productId) => {
 	cart.update((items) => {
 		const filtered = items.filter((id) => id !== productId);
-		console.log({ filtered, productId, items });
 		return filtered;
 	});
 };

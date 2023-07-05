@@ -4,14 +4,13 @@ ShopSavvy is a demo ecommerce app created to play around with [SvelteKit](https:
 
 # Running locally
 
-To run the ShopSavy db/backend locally with some test data, first create a new `.env` file and copy over the contents from `env.example`.
+To run the ShopSavy db/backend locally with some test data, first `cd backend` and create a new `.env` file, copying over the contents from `env.example`.
 
 Then, run these commands:
 
 ```zsh
 pip3 install -r requirements.txt
-make run-db
-alembic upgrade head
+docker-compose up -d
 uvicorn src.main:app --reload
 ```
 

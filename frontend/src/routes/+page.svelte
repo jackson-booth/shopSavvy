@@ -1,10 +1,9 @@
 <script>
 	import Gallery from '../components/Gallery.svelte';
 	import LargeBanner from '../components/LargeBanner.svelte';
-	import NavBar from '../components/NavBar.svelte';
-	import { fetchProducts } from '../endpoints/products.js';
 
-	let storeProducts = fetchProducts();
+	export let data;
+	$: storeProducts = data.products;
 </script>
 
 <LargeBanner

@@ -4,7 +4,7 @@
 	import { numCartItems } from '../endpoints/cart';
 </script>
 
-<section class="flex justify-center w-full text-xs py-2 sticky top-0 bg-white">
+<section class="flex justify-center w-full text-xs py-2 sticky top-0 bg-white px-2">
 	<div class="w-[70rem] flex justify-between">
 		<div class="grid grid-cols-4 gap-4 place-items-center">
 			<div>

@@ -6,7 +6,7 @@
 <main class="w-full h-full">
 	<div>
 		<NavBar />
-		<div class="max-w-5xl m-auto font-primary">
+		<div class="max-w-5xl m-auto font-primary px-2">
 			<slot />
 		</div>
 	</div>

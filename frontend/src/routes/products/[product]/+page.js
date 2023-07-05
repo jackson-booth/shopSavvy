@@ -1,7 +1,7 @@
 import { fetchProduct } from '../../../endpoints/products.js';
 
-export function load({ params }) {
+export function load({ params, fetch }) {
 	return {
-		product: fetchProduct(params.product)
+		product: fetchProduct(params.product, fetch)
 	};
 }

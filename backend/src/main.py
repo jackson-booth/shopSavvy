@@ -61,8 +61,13 @@ def get_by_id(id: int, db: Session = Depends(get_db)):
 
 
 @app.get("/products")
-def get_all(db: Session = Depends(get_db)):
-    return db.query(Product).all()
+def get_all(limit=None, category=None, db: Session = Depends(get_db)):
+    print("Yo")
+    query = db.query(Product)
+    if category:
+        query = query.filter_by(category=category)
+
+    return query.limit(limit).all()
 
 
 @app.delete("/delete-product/{id}")
